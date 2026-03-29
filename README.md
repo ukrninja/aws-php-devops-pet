@@ -21,3 +21,4 @@ Browser -> Nginx -> Apache/PHP -> MySQL
 ## Run
 ```bash
 docker compose up -d --build
+"webhook test" 
