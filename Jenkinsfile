@@ -8,16 +8,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                deleteDir()
-                checkout scm
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ./app"
             }
         }
 
