@@ -9,14 +9,13 @@ services:
       - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   app:
-    build: ./app
+    image: ukrninja/aws-php-devops-pet:latest
     container_name: app
     restart: always
     env_file: .env
     depends_on:
       - db
-    volumes:
-      - ./app/src:/var/www/html
+  
 
   nginx:
     image: nginx:latest
